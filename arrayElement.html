@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {padding-top: 50px}
+    </style>
+</head>
+<body>
+<input type="text" id="txtValue" >
+<input type="button" id="btnAdd" value="Add" onclick="addelement();">
+<input type="button" id="btnDisplay" value="Display" onclick="displayelement();">
+<p id="result"></p>
+</body>
+<script>
+    let x = 0;
+    let array = Array();
+    function addelement() {
+       array[x] = document.getElementById("txtValue").value;
+       alert("Element: " + array[x] + " Được thêm vào " + x);
+       x++;
+       document.getElementById("txtValue").value = "";
+        
+    }
+    function displayelement() {
+        let e = "<hr/>";
+        for (i = 0; i < array.length; i ++) {
+         e += "Element " + i + "=" + array[i] + "<br/>";
+        }
+        document.getElementById("result").innerHTML = e;
+
+    }
+</script>
+</html>
